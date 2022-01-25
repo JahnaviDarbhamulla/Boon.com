@@ -1,53 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Pomodoro Clock</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Pomodoro Clock</h1>
+<html>
 
-    <figure class="clock">
-      <div class="mins">0</div>
-      <div class="colon">:</div>
-      <div class="secs">00</div>
-      <!-- <audio
-        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
-      ></audio> -->
-      <svg class="progress-ring" height="600" width="900">
-        <circle
-          class="progress-ring__circle"
-          stroke-width="6"
-          fill="transparent"
-          r="150"
-          cx="500"
-          cy="480"
-        />
-      </svg>
-    </figure>
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Clock</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <div class="btn-group">
-      <button class="start">start focus</button>
-      <button class="reset">reset</button>
-      <button class="pause">pause</button>
-    </div>
-    
-    <div class="form">
-    <form>
-      <label for="ftime"> Focus Time </label><br>
-      <input type="text" id="ftime" value="25"><br>
-      <label for="btime">Break Time </label><br>
-      <input type="text" id="btime" value="5"><br><br>
-      <button> Save</button>
-      </form>
-    
-  </div>
-   
+<body>
+    <div class="container text-center">
+        <header class="page-header">
+            <h1>Pomodoro Clock</h1>
+        </header>
+        <div id="custom" class="custom">
+            <div id="session" class="session inlineb">
+                <p id="session-head">Session</p>
+                <button type="button" id="up-session" class="btn btn-default inlineb" aria-label="Increase Session Time"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+					<p id="session-time" class="inlineb">25</p>
+				<button  type="button" id="down-session" class="btn btn-default inlineb" aria-label="Decrease Session Time"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+		</div>
+		<div id="break" class="break inlineb">
+			<p id="break-head">Break</p>
+				<button  type="button" id="up-break" class="btn btn-default inlineb" aria-label="Increase Break Time"><span class="glyphicon glyphicon-plus" aria-hidden="true"></button>
+					<p id="break-time" class="inlineb">5</p>
+				<button  type="button" id="down-break" class="btn btn-default inlineb" aria-label="Decrease Break Time"><span class="glyphicon glyphicon-minus" aria-hidden="true"></button>
+		</div>
+		<div id="timer-count" class="timer-count">
+			<span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
 
-    <script src="settings.js"></script>
-    <script src="timer.js"></script>
-    <script src="progress.js"></script>
-  </body>
+        <div id="controls" class="controls">
+            <button type="button" id="start" title="Start Timer" class="btn btn-default btn-lg" aria-label="Start Timer"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></button>
+            <button type="button" id="reset" title="Reset Timer" class="btn btn-default btn-lg" aria-label="Reset Timer"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+            
+        </div>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="main.js"></script>
+</body>
+
 </html>
